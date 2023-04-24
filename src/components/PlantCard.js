@@ -1,6 +1,7 @@
 import React from "react";
+import NewReviewForm from "./NewReviewForm";
 
-function PlantCard() {
+function ReviewCard() {
   return (
     <li className="card">
       <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
@@ -15,4 +16,4 @@ function PlantCard() {
   );
 }
 
-export default PlantCard;
+export default ReviewCard;

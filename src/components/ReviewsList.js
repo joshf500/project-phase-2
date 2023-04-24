@@ -1,10 +1,12 @@
 import React from "react";
-import PlantCard from "./PlantCard";
+import NewReviewForm from "./NewReviewForm";
 
-function PlantList() {
+
+
+function ReviewsList() {
   return (
     <ul className="cards">{/* render PlantCards components in here */}</ul>
   );
 }
 
-export default PlantList;
+export default ReviewsList;
