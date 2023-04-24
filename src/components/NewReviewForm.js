@@ -1,6 +1,6 @@
 import React from "react";
 
-function NewPlantForm() {
+function NewReviewForm() {
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
@@ -14,4 +14,4 @@ function NewPlantForm() {
   );
 }
 
-export default NewPlantForm;
+export default NewReviewForm;
