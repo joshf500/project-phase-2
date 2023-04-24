@@ -62,9 +62,10 @@ main {
   justify-content: center;
 }
 
-.new-plant-form input {
+.NewReviewForm #date {
   margin-right: 2rem;
-  flex: 1;
+  
+  width: 10px;
 }
 
 .new-plant-form button {
