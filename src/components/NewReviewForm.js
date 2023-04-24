@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
+
 const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
 
 function NewReviewForm({onReviewSubmit}) {
   const [depAirport, setDepAirport] = useState({})
   const [arrAirport, setArrAirport] = useState({})
-  const [gpsCode, setGpsCode] = useState("")
+  const [gpsCode, setGpsCode] = useState("OTHH")
   const [date, setDate]=useState("")
   const [text, setText]=useState("")
   
@@ -40,7 +41,7 @@ function handleReviewSubmit(e){
     text: text
   }
 
-fetch(`https://airportdb.io/api/v1/airport/${gpsCode}?apiToken=${apiKey}`,{
+fetch(`http://localhost:6001/reviews`,{
   method: "POST",
   headers:{
     "Content-Type": "application/json",

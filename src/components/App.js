@@ -1,7 +1,9 @@
-import React, {useEffect} from "react";
+import React, {useEffect,useState} from "react";
 import Header from "./Header";
 import SeeOrCreate from "./SeeOrCreate";
 import NewReviewForm from "./NewReviewForm";
+import ReviewCard from "./ReviewCard";  
+import ReviewsList from "./ReviewsList";
 const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
 const gpsCode = "OTHH"
 // const url="https://api.api-ninjas.com/v1/airports"
@@ -14,13 +16,11 @@ const gpsCode = "OTHH"
 
 function App() {
   //const name = 'London Heathrow'
-
+  const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch(`https://airportdb.io/api/v1/airport/${gpsCode}?apiToken=${apiKey}`, {
-      headers: {"Content-Type": 'application/json'},
-  })
+    fetch(`http://localhost:6001/reviews`)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => setReviews(data))
   }, []);
     
 
@@ -30,6 +30,7 @@ function App() {
     <div className="app">
       <NewReviewForm/>
       <Header />
+      <ReviewsList reviews={reviews}/>
       {/* <SeeOrCreate /> */}
     </div>
   );

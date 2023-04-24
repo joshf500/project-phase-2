@@ -1,11 +1,23 @@
 import React from "react";
-import NewReviewForm from "./NewReviewForm";
+import ReviewCard from "./ReviewCard";
 
 
 
-function ReviewsList() {
+function ReviewsList({ reviews }) {
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="reviewsList">
+      {reviews.map((review) => {
+        // console.log(plant);
+        return (
+          <ReviewCard key={review?.id}
+            depAirport={review?.depAirport}
+            arrAirport={review?.arrAirport}
+            date={review?.date}
+            text={review?.text}
+          />
+        );
+      })}
+    </ul>
   );
 }
 
