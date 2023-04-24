@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import Header from "./Header";
-import PlantPage from "./PlantPage";
+import SeeOrCreate from "./SeeOrCreate";
+import NewReviewForm from "./NewReviewForm";
 const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
 const gpsCode = "OTHH"
 // const url="https://api.api-ninjas.com/v1/airports"
@@ -27,8 +28,9 @@ function App() {
 
   return (
     <div className="app">
+      <NewReviewForm/>
       <Header />
-      <PlantPage />
+      {/* <SeeOrCreate /> */}
     </div>
   );
 }
