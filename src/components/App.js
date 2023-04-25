@@ -6,6 +6,7 @@ import SeeOrCreate from "./SeeOrCreate";
 import NewReviewForm from "./NewReviewForm";
 import ReviewCard from "./ReviewCard";  
 import ReviewsList from "./ReviewsList";
+import CreateReview from "./CreateReview";
 const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
 const gpsCode = "OTHH"
 
@@ -40,11 +41,15 @@ const onReviewSubmit = (newReviews) =>{
       <nav className="navbar">
         {/* <Link className='link' to='/'>Home</Link> */}
         <Link className='link' to='/view'>View</Link>
+        <br/>
+        <Link className='link' to='/create'>Create</Link>
       </nav>
       <Routes>
         {/* <Route path='/' element={<Home />} /> */}
         <Route path='view' element={<ViewByAirline/>} />
-       {/* <Route path='submit' element={<SubmitByAirline />} /> */}
+        <Route path='reviewslist' element={<ReviewsList reviews={reviews}/>} />
+        <Route path='create' element={<CreateReview/>} />
+        <Route path='newreviewform' element={<NewReviewForm/>} />
      </Routes>
       {/* <SeeOrCreate /> */}
     </div>
