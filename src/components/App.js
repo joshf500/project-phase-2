@@ -2,6 +2,7 @@ import React, {useEffect,useState} from "react";
 import { Link, Route, Routes } from 'react-router-dom'
 import ViewByAirline from "./ViewByAirline";
 import Header from "./Header";
+import "./App.css";
 import SeeOrCreate from "./SeeOrCreate";
 import NewReviewForm from "./NewReviewForm";
 import ReviewCard from "./ReviewCard";  
@@ -15,8 +16,6 @@ const gpsCode = "OTHH"
 //   method: 'GET',
 //   headers: { 'x-api-key': "oXBEJfC9mYEY8R25nkiXZQ==T1FRszwualM66Hnt" }
 // }
-
-
 
 function App() {
   //const name = 'London Heathrow'
@@ -35,6 +34,7 @@ const onReviewSubmit = (newReviews) =>{
 
   return (
     <div className="app">
+      <Header />
       {/* <Header />
       <NewReviewForm onReviewSubmit={onReviewSubmit}/>
       <ReviewsList reviews={reviews}/> */}
