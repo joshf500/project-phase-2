@@ -17,19 +17,22 @@ const gpsCode = "OTHH"
 function App() {
   //const name = 'London Heathrow'
   const [reviews, setReviews] = useState([]);
+  
   useEffect(() => {
     fetch(`http://localhost:6001/reviews`)
       .then(res => res.json())
       .then(data => setReviews(data))
   }, []);
     
-
+const onReviewSubmit = (newReviews) =>{
+    setReviews([...reviews, newReviews])
+  }
 
 
   return (
     <div className="app">
-      <NewReviewForm/>
       <Header />
+      <NewReviewForm onReviewSubmit={onReviewSubmit}/>
       <ReviewsList reviews={reviews}/>
       {/* <SeeOrCreate /> */}
     </div>

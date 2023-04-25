@@ -8,23 +8,18 @@
       "text": "Great flight!"
     },
     {
-      "date": "2023-04-02",
-      "text": "fbaerbgaw",
+      "depAirport": "JFK",
+      "arrAirport": "DOH",
+      "date": "1997-12-10",
+      "text": "Fantastic!",
       "id": 2
-    },
-    {
-      "depAirport": "Select Departure\nJFK\nDOH",
-      "arrAirport": "Select Arrival\nJFK\nDOH",
-      "date": "2023-04-04",
-      "text": "qcvewvw",
-      "id": 3
     },
     {
       "depAirport": "JFK",
       "arrAirport": "DOH",
-      "date": "2023-04-10",
-      "text": "srghaerhgert",
-      "id": 4
+      "date": "1997-12-10",
+      "text": "Fantastic!",
+      "id": 3
     }
   ]
 }
