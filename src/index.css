@@ -29,6 +29,7 @@ button.primary {
 }
 
 .app {
+  font-family: inherit;
   margin: 0 auto;
   max-width: 1200px;
 }

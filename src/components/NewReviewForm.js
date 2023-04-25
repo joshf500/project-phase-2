@@ -59,7 +59,7 @@ fetch(`http://localhost:6001/reviews`,{
       <h2>New Plant</h2>
       <form onSubmit={handleReviewSubmit}>
         <datalist id="mylist">
-        <option value = {`JFK`} id="JFK" name="KJFK" >New York, USA</option>
+          <option value = {`JFK`} id="JFK" name="KJFK" >New York, USA</option>
           <option value = {`DOH`} id="DOH" name="OTHH">Doha, Qatar</option>
         </datalist>
         <h3>Select Departure</h3>

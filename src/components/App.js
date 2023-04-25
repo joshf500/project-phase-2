@@ -1,4 +1,6 @@
 import React, {useEffect,useState} from "react";
+import { Link, Route, Routes } from 'react-router-dom'
+import ViewByAirline from "./ViewByAirline";
 import Header from "./Header";
 import SeeOrCreate from "./SeeOrCreate";
 import NewReviewForm from "./NewReviewForm";
@@ -6,6 +8,7 @@ import ReviewCard from "./ReviewCard";
 import ReviewsList from "./ReviewsList";
 const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
 const gpsCode = "OTHH"
+
 // const url="https://api.api-ninjas.com/v1/airports"
 // let options = {
 //   method: 'GET',
@@ -31,9 +34,18 @@ const onReviewSubmit = (newReviews) =>{
 
   return (
     <div className="app">
-      <Header />
+      {/* <Header />
       <NewReviewForm onReviewSubmit={onReviewSubmit}/>
-      <ReviewsList reviews={reviews}/>
+      <ReviewsList reviews={reviews}/> */}
+      <nav className="navbar">
+        {/* <Link className='link' to='/'>Home</Link> */}
+        <Link className='link' to='/view'>View</Link>
+      </nav>
+      <Routes>
+        {/* <Route path='/' element={<Home />} /> */}
+        <Route path='view' element={<ViewByAirline/>} />
+       {/* <Route path='submit' element={<SubmitByAirline />} /> */}
+     </Routes>
       {/* <SeeOrCreate /> */}
     </div>
   );
