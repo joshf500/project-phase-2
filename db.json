@@ -1,9 +1,30 @@
-{"reviews":[
+{
+  "reviews": [
     {
-        "id": 1,
-        "depAirport": "JFK",
-        "arrAirport": "DOH",
-        "date":"04/13/2023",
-        "text": "Great flight!"
+      "id": 1,
+      "depAirport": "JFK",
+      "arrAirport": "DOH",
+      "date": "2023-04-13",
+      "text": "Great flight!"
+    },
+    {
+      "date": "2023-04-02",
+      "text": "fbaerbgaw",
+      "id": 2
+    },
+    {
+      "depAirport": "Select Departure\nJFK\nDOH",
+      "arrAirport": "Select Arrival\nJFK\nDOH",
+      "date": "2023-04-04",
+      "text": "qcvewvw",
+      "id": 3
+    },
+    {
+      "depAirport": "JFK",
+      "arrAirport": "DOH",
+      "date": "2023-04-10",
+      "text": "srghaerhgert",
+      "id": 4
     }
-]}
+  ]
+}

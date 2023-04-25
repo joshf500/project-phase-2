@@ -10,10 +10,7 @@ function ReviewsList({ reviews }) {
         // console.log(plant);
         return (
           <ReviewCard key={review?.id}
-            depAirport={review?.depAirport}
-            arrAirport={review?.arrAirport}
-            date={review?.date}
-            text={review?.text}
+            review={review}
           />
         );
       })}

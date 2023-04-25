@@ -6,7 +6,7 @@ function ReviewCard({review}) {
     <li className="card">
       <h2>{`${review?.depAirport}-${review?.arrAirport}`}</h2>
       <h3>Date: {review?.date}</h3>
-      <p>Comments: {review?.text}</p>
+      <p>Comments: {review.text}</p>
 
     </li>
   );

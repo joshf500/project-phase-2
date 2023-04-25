@@ -58,17 +58,19 @@ fetch(`http://localhost:6001/reviews`,{
     <div className="new-plant-form">
       <h2>New Plant</h2>
       <form onSubmit={handleReviewSubmit}>
-        <select id="departure" onChange={e=> {setGpsCode(e.target.value); setDepAirport(e.target.innerText)}}>
-          <option>Select Departure</option>
-          <option value = {`KJFK`} >JFK</option>
-          <option value = {`OTHH`} >DOH</option>
-        </select>
-        {/* <input type="search" name="departure" list="mylist" placeholder="Departure Airport" /> */}
-        <select id="arrival" onChange={e=> {setGpsCode(e.target.value); setArrAirport(e.target.innerText)}}>
-          <option>Select Arrival</option>
-          <option value = {`KJFK`} >JFK</option>
-          <option value = {`OTHH`} >DOH</option>
-        </select>
+        <datalist id="mylist">
+        <option value = {`JFK`} id="JFK" name="KJFK" >New York, USA</option>
+          <option value = {`DOH`} id="DOH" name="OTHH">Doha, Qatar</option>
+        </datalist>
+        <h3>Select Departure</h3>
+        <input type ="search" list ="mylist" id="departure" 
+        onChange={e=> {setGpsCode(e.target.name); setDepAirport(e.target.value)}}>
+        </input>
+        <h3>Select Arrival</h3>
+        <input type ="search" list ="mylist" id="arrival"
+        onChange={e=> {setGpsCode(e.target.name); setArrAirport(e.target.value)}}>
+        </input>
+    
         <input type="date" id="date"  placeholder="Date" onChange={e=>setDate(e.target.value)} />
         
           <textarea id="review" rows="4" cols="50" placeholder="Share your experience!" onChange={e=>setText(e.target.value)}>
