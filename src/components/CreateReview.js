@@ -1,13 +1,11 @@
 import {React, useState, useEffect, createContext} from "react"; 
 import {useNavigate} from 'react-router-dom'
 
-export const MyContext = createContext({
-    selected: []
-})
+export const MyContext = createContext("")
 export default function CreateReview(){
     const navigate = useNavigate()
     const [airlines, setAirlines] = useState([])
-    const [selected, setSelected]= useState("")
+    // const [selected, setSelected]= useState("")
     
 
    
@@ -20,17 +18,18 @@ export default function CreateReview(){
       }, []);
   
     return(
-        <MyContext.Provider selected={selected}>
+        // <MyContext.Provider value={selected}>
             <main>
                 <h2>Airlines</h2>
 
                 {airlines.map((airline) => {
+                    console.log(airline.title)
                 return (
-                <img onClick={()=>{setSelected(airline.title); navigate('/newreviewform')}} 
-                key={airline.id} name= {selected} src={airline.logo}
+                <img onClick={()=>{navigate('/newreviewform',{state:{selected: airline.title}});}} 
+                key={airline.id} src={airline.logo}
                 />)})}
             </main>
-        </MyContext.Provider>
+        // </MyContext.Provider>
     )
 }
             {/* // <img >

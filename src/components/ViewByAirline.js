@@ -4,31 +4,31 @@ import {useNavigate} from 'react-router-dom'
 import { Link, Route, Routes } from 'react-router-dom'
 import ReviewsList from "./ReviewsList";
 
-export default function ViewByAirline({airlines}){
+export default function ViewByAirline(){
     const navigate = useNavigate()
-    const [reviews, setReviews] = useState([]);
-   
+    const [airlines, setAirlines] = useState([])
+    
     useEffect(() => {
-        fetch(`http://localhost:6001/reviews`)
+        fetch(`http://localhost:4001/airlines`)
           .then(res => res.json())
-          .then(data => setReviews(data))
+          .then(data => {
+            setAirlines(data)
+           })
       }, []);
-
+  
     return(
         <>
             <main>
                 <h2>Airlines</h2>
-                <img 
-                class = "American Airlines"
-                onClick={() => {navigate('/reviewslist')}}
-                src="https://s21.q4cdn.com/616071541/files/multimedia-gallery/assets/Logos/american-airlines/THUMB-aa_aa__vrt_rgb_grd_pos.png"
-                >
-                </img>
+                {airlines.map((airline) => {
+                    console.log(airline.title)
+                return (
+                <img key={airline.id} src={airline.logo} 
+                onClick={()=>{navigate('/reviewslist',{state:{selected: airline.title}},{state:{thumbnail: airline.src}});}} 
+                />)})}
                 
             </main>
-            <Routes>
-                <Route path='reviewslist' element={<ReviewsList reviews={reviews}/>} />
-            </Routes>
+            
         </>
     )
 }

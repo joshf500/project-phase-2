@@ -1,13 +1,18 @@
-import React, {useEffect, useState} from "react";
-import CreateReview from "./CreateReview"
+import React, {useEffect, useState, useContext} from "react";
+import { useLocation } from "react-router-dom";
+import CreateReview, { MyContext } from "./CreateReview"
 const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
 
 function NewReviewForm({onReviewSubmit}) {
+  const location = useLocation()
   const [depAirport, setDepAirport] = useState({})
   const [arrAirport, setArrAirport] = useState({})
   const [gpsCode, setGpsCode] = useState("OTHH")
   const [date, setDate]=useState("")
   const [text, setText]=useState("")
+  const [rating, setRating]=useState()
+
+  console.log(location.state.selected, 'context')
   
  
   useEffect(() => {
@@ -32,15 +37,18 @@ function NewReviewForm({onReviewSubmit}) {
 // }
 
 function handleReviewSubmit(e){
-  e.preventDefault();
-  
-  const review ={
+ e.preventDefault()
+  const review = {
     depAirport: depAirport,
     arrAirport: arrAirport,
     date: date,
-    text: text
-    // title: {selected}
+    text: text,
+    title: location.state.selected,
+    rating: rating
   }
+ 
+  
+
 
 fetch(`http://localhost:6001/reviews`,{
   method: "POST",
@@ -56,7 +64,8 @@ fetch(`http://localhost:6001/reviews`,{
 }
 
   return (
-    <div className="new-plant-form">
+    
+    <div className="new-review-form">
       <h2>New Plant</h2>
       <form onSubmit={handleReviewSubmit} >
         <datalist id="mylist">
@@ -74,7 +83,7 @@ fetch(`http://localhost:6001/reviews`,{
     
         <input type="date" id="date"  placeholder="Date" onChange={e=>setDate(e.target.value)} />
 
-        <select>
+        <select onChange={e=>setRating(e.target.value)}>
           Rate your experience out of 5
             <option value="1" >1</option><option value="2" >2</option>
             <option value="3" >3</option><option value="4" >4</option>
@@ -87,6 +96,7 @@ fetch(`http://localhost:6001/reviews`,{
         <button type="submit">Submit</button>
       </form>
     </div>
+    
   );
 }
 

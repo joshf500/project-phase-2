@@ -51,6 +51,9 @@ function App() {
         {/* <Route path='reviewslist' element={<ReviewsList reviews={reviews}/>} /> */}
         <Route path='create' element={<CreateReview/>} />
         <Route path='newreviewform' element={<NewReviewForm/>} />
+      
+         <Route path='reviewslist' element={<ReviewsList/>} />
+           
      </Routes>
       {/* <SeeOrCreate /> */}
     </div>
