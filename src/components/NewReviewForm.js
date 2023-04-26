@@ -12,9 +12,7 @@ function NewReviewForm({onReviewSubmit}) {
   const [text, setText]=useState("")
   const [rating, setRating]=useState()
   const [airports, setAirports]=useState([])
-  console.log(location.state.selected, 'context')
   
- 
   useEffect(() => {
     fetch(`http://localhost:8001/airports`)
       .then(res => res.json())
@@ -24,16 +22,6 @@ function NewReviewForm({onReviewSubmit}) {
        })
   }, []);
   
-  //const airportOption = (data) => {
-  // let code = airport.iata_code
-  // let name = airport.name
-  // let municipality = airport.municipality
-  // let country = airport.country.name
- // }
-// const handleReviewSubmit = (e)=>{
-//   const newReview = `${e.target.value}`
-// }
-
 function handleReviewSubmit(e){
  e.preventDefault()
   const review = {

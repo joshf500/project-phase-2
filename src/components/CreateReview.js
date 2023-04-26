@@ -5,10 +5,7 @@ export const MyContext = createContext("")
 export default function CreateReview(){
     const navigate = useNavigate()
     const [airlines, setAirlines] = useState([])
-    // const [selected, setSelected]= useState("")
     
-
-   
     useEffect(() => {
         fetch(`http://localhost:4001/airlines`)
           .then(res => res.json())
