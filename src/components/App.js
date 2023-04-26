@@ -3,7 +3,6 @@ import { Link, Route, Routes } from 'react-router-dom'
 import ViewByAirline from "./ViewByAirline";
 import "./App.css";
 import Home from "./Home";
-import './App.css';
 import TopAirlines from "./TopAirlines";
 import NewReviewForm from "./NewReviewForm"; 
 import ReviewsList from "./ReviewsList";
@@ -36,7 +35,7 @@ function App() {
   return (
     <div className="app">
       <nav className="navbar">
-        <Link className='link' to='/' exact>Home</Link> 
+        <Link className='link' to='/' exact="true">Home</Link> 
         <br/>
         <Link className='link' to='/view'>View</Link>
         <br/>
@@ -45,7 +44,7 @@ function App() {
         <Link className='link' to='/topairlines'>View Top Airlines</Link>
       </nav>
       <Routes>
-        <Route path='/' exact element={<Home />} />
+        <Route path='/' exact="true" element={<Home />} />
         <Route path='view' element={<ViewByAirline/>} />
         <Route path='create' element={<CreateReview/>} />
         <Route path='newreviewform' element={<NewReviewForm/>} />
