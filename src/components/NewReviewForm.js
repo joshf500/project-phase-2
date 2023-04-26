@@ -11,20 +11,18 @@ function NewReviewForm({onReviewSubmit}) {
   const [date, setDate]=useState("")
   const [text, setText]=useState("")
   const [rating, setRating]=useState()
-
+  const [airports, setAirports]=useState([])
   console.log(location.state.selected, 'context')
   
  
   useEffect(() => {
-    fetch(`https://airportdb.io/api/v1/airport/${gpsCode}?apiToken=${apiKey}`)
+    fetch(`http://localhost:8001/airports`)
       .then(res => res.json())
       .then(data => {
-        setDepAirport(data)
-        setArrAirport(data)
-        console.log(data)
+        setAirports(data)
+        
        })
   }, []);
- 
   
   //const airportOption = (data) => {
   // let code = airport.iata_code
@@ -46,9 +44,6 @@ function handleReviewSubmit(e){
     title: location.state.selected,
     rating: rating
   }
- 
-  
-
 
 fetch(`http://localhost:6001/reviews`,{
   method: "POST",
@@ -69,8 +64,15 @@ fetch(`http://localhost:6001/reviews`,{
       <h2>New Plant</h2>
       <form onSubmit={handleReviewSubmit} >
         <datalist id="mylist">
-          <option value = {`JFK`} id="JFK" name="KJFK" >New York, USA</option>
-          <option value = {`DOH`} id="DOH" name="OTHH">Doha, Qatar</option>
+            {airports.map((airport) => {
+              return (
+              <option value={airport.iata_code}>
+                {airport.city}, {airport.country}
+              </option>
+            )
+          })}
+          {/* <option value = {`JFK`} id="JFK" name="KJFK" >New York, USA</option>
+          <option value = {`DOH`} id="DOH" name="OTHH">Doha, Qatar</option> */}
         </datalist>
         <h3>Select Departure</h3>
         <input type ="search" list ="mylist" id="departure" 

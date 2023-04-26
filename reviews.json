@@ -1,0 +1,21 @@
+{
+  "reviews": [
+    {
+      "depAirport": "DOH",
+      "arrAirport": "JFK",
+      "date": "2023-04-12",
+      "text": "gchjgv",
+      "title": "American Airlines",
+      "id": 7
+    },
+    {
+      "depAirport": "JFK",
+      "arrAirport": "DOH",
+      "date": "2023-04-11",
+      "text": "5 stars",
+      "title": "Qatar Airways",
+      "rating": "5",
+      "id": 8
+    }
+  ]
+}
