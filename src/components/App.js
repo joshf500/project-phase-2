@@ -1,11 +1,11 @@
 import React, {useEffect,useState} from "react";
 import { Link, Route, Routes } from 'react-router-dom'
 import ViewByAirline from "./ViewByAirline";
-import Header from "./Header";
 import "./App.css";
-import SeeOrCreate from "./SeeOrCreate";
-import NewReviewForm from "./NewReviewForm";
-import ReviewCard from "./ReviewCard";  
+import Home from "./Home";
+import './App.css';
+import TopAirlines from "./TopAirlines";
+import NewReviewForm from "./NewReviewForm"; 
 import ReviewsList from "./ReviewsList";
 import CreateReview from "./CreateReview";
 const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
@@ -35,27 +35,25 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
-      {/* <Header />
-      <NewReviewForm onReviewSubmit={onReviewSubmit}/>
-      <ReviewsList reviews={reviews}/> */}
       <nav className="navbar">
-        {/* <Link className='link' to='/'>Home</Link> */}
+        <Link className='link' to='/' exact>Home</Link> 
+        <br/>
         <Link className='link' to='/view'>View</Link>
         <br/>
         <Link className='link' to='/create'>Create</Link>
+        <br/>
+        <Link className='link' to='/topairlines'>View Top Airlines</Link>
       </nav>
       <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
+        <Route path='/' exact element={<Home />} />
         <Route path='view' element={<ViewByAirline/>} />
-        {/* <Route path='reviewslist' element={<ReviewsList reviews={reviews}/>} /> */}
         <Route path='create' element={<CreateReview/>} />
         <Route path='newreviewform' element={<NewReviewForm/>} />
-      
-         <Route path='reviewslist' element={<ReviewsList/>} />
+        <Route path='reviewslist' element={<ReviewsList/>} />
+        <Route path='topairlines' element={<TopAirlines />} /> 
            
      </Routes>
-      {/* <SeeOrCreate /> */}
+  
     </div>
   );
 }

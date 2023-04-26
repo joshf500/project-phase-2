@@ -20,3 +20,27 @@
     text-decoration: none;
 }
 
+h1 {
+    font-size: 6rem;
+}
+
+.homeContent {
+    color: rgb(39, 189, 39);
+}
+
+.welcome {
+    font-size: 2.5em;
+    font-weight: 900;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: rgb(39, 189, 39);
+}
+
+.logo {
+    font-size: 20em;
+    padding-left: 0.5rem;
+    color: transparent;
+    text-shadow: 0 0 0 var(--green);
+    margin: auto;
+    display: table;
+}
