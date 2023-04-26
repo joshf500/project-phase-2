@@ -16,22 +16,6 @@
       "title": "Qatar Airways",
       "rating": "5",
       "id": 8
-    },
-    {
-      "depAirport": "ZNZ",
-      "arrAirport": "FNJ",
-      "date": "2023-04-17",
-      "text": "North Korea",
-      "title": "Qatar Airways",
-      "id": 9
-    },
-    {
-      "depAirport": "ATL",
-      "arrAirport": "ORD",
-      "date": "2023-04-25",
-      "text": "Forced me off the plane",
-      "title": "United Airlines",
-      "id": 10
     }
   ]
 }

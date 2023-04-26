@@ -12,8 +12,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "json-server --watch db.json -p 6001",
-    "server2": "json-server --watch airlines.json -p 4001",
+    "reviews": "json-server --watch db.json -p 6001",
+    "airlines": "json-server --watch airlines.json -p 4001",
+    "airports": "json-server --watch airports.json -p 8001",
     "test": "jest"
   },
   "eslintConfig": {

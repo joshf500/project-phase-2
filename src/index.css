@@ -137,3 +137,10 @@ input:focus {
     width: calc(20% - 2rem);
   }
 }
+.logos{
+  display: flex;
+  flex-direction: row;
+  /* font-size: 12px;
+  padding-left: 0.5rem;
+  margin: 1rem; */
+}

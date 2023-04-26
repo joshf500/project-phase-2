@@ -23,9 +23,13 @@ export default function ViewByAirline(){
                 {airlines.map((airline) => {
                     console.log(airline.title)
                 return (
-                <img key={airline.id} src={airline.logo} 
-                onClick={()=>{navigate('/reviewslist',{state:{selected: airline.title}},{state:{thumbnail: airline.src}});}} 
-                />)})}
+                <div>
+                    <h4>{airline.title}</h4>
+                    <img key={airline.id} src={airline.logo} 
+                    onClick={()=>{navigate('/reviewslist',{state:{selected: airline.title}},{state:{thumbnail: airline.src}});}} 
+                    />
+                </div>
+                )})}
                 
             </main>
             
