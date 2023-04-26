@@ -13,7 +13,7 @@ useEffect(() => {
     })
 }, []);
 const filteredReviews = reviews.filter((review) => {
-        return reviews.sort((a, b) => (a.rating > b.rating) ? 1 : -1)
+        return reviews.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
     });
     return(
         <>
