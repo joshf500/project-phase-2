@@ -23,9 +23,11 @@ function ReviewsList() {
 
   return (
     <ul className="reviewsList">
+      <h2>{location.state.selected} Flight Reviews</h2>
       {reviews.map((review) => {
         // console.log(plant);
         return (
+
           <ReviewCard key={review?.id}
             review={review}
           />

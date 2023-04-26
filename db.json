@@ -29,8 +29,15 @@
       "rating": "2",
       "id": 8,
       "image": "https://companieslogo.com/img/orig/SAVE_BIG-ca59c435.png?t=1602678222"
+    },
+    {
+      "depAirport": "ARN",
+      "arrAirport": "ORD",
+      "date": "2023-04-10",
+      "text": "Terrible food! bleuhuhhhh!",
+      "title": "Scandinavian Airlines",
+      "rating": "2",
+      "id": 9
     }
   ]
 }
-
-

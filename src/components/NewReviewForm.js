@@ -7,7 +7,6 @@ function NewReviewForm({onReviewSubmit}) {
   const location = useLocation()
   const [depAirport, setDepAirport] = useState({})
   const [arrAirport, setArrAirport] = useState({})
-  const [gpsCode, setGpsCode] = useState("OTHH")
   const [date, setDate]=useState("")
   const [text, setText]=useState("")
   const [rating, setRating]=useState()
@@ -55,7 +54,8 @@ fetch(`http://localhost:6001/reviews`,{
             {airports.map((airport) => {
               return (
               <option value={airport.iata_code}>
-                {airport.city}, {airport.country}
+               {airport.name} — {airport.city}, {airport.country} 
+                <img src="https://images.kiwi.com/airlines/64/EUROLINES.png"/>
               </option>
             )
           })}
@@ -64,11 +64,11 @@ fetch(`http://localhost:6001/reviews`,{
         </datalist>
         <h3>Select Departure</h3>
         <input type ="search" list ="mylist" id="departure" 
-        onChange={e=> {setGpsCode(e.target.name); setDepAirport(e.target.value)}}>
+        onChange={e=> {setDepAirport(e.target.value)}}>
         </input>
         <h3>Select Arrival</h3>
         <input type ="search" list ="mylist" id="arrival"
-        onChange={e=> {setGpsCode(e.target.name); setArrAirport(e.target.value)}}>
+        onChange={e=> {setArrAirport(e.target.value)}}>
         </input>
     
         <input type="date" id="date"  placeholder="Date" onChange={e=>setDate(e.target.value)} />

@@ -41,12 +41,12 @@ header h1 {
   padding: 0.5rem 0;
 }
 
-.logo {
+/* .logo {
   font-size: 1.25em;
   padding-left: 0.5rem;
   color: transparent;
   text-shadow: 0 0 0 var(--green);
-}
+} */
 
 main {
   padding: 0 1rem;
@@ -67,10 +67,6 @@ main {
   margin-right: 2rem;
   
   width: 10px;
-}
-
-.new-plant-form button {
-  width: 150px;
 }
 
 .searchbar {
@@ -99,47 +95,11 @@ input:focus {
   border-bottom: 2px solid var(--green);
 }
 
-.cards {
-  list-style: none;
-}
 
-.card {
+.options{
+  display: inline-block;
   margin: 1rem;
-}
-
-.card img {
-  width: 100%;
-}
-
-.card button {
-  margin-top: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .card {
-    width: calc(33% - 2rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .card {
-    width: calc(25% - 2rem);
-  }
-}
-
-@media (min-width: 1200px) {
-  .card {
-    width: calc(20% - 2rem);
-  }
-}
-.logos{
-  display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   /* font-size: 12px;
   padding-left: 0.5rem;
   margin: 1rem; */

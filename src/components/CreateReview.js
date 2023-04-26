@@ -20,11 +20,11 @@ export default function CreateReview(){
                 <h2>Airlines</h2>
                 {airlines.map((airline) => {
                     return (
-                    <ul>
-                    {/* // <main class="logos"> */}
-                    <img onClick={()=>{navigate('/newreviewform',{state:{selected: airline.name}});}} 
-                    key={airline.id} src={airline.logo}/>
-                     <p>{airline.name}</p>
+                    <ul class="options">
+                        <span key={airline.id} onClick={()=>{navigate('/newreviewform',{state:{selected: airline.name}});}} >
+                            <img src={airline.logo}/>
+                            <p>{airline.name}</p>
+                        </span>
                     </ul>
                     )
                 })}

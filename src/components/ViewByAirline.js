@@ -21,15 +21,15 @@ export default function ViewByAirline(){
             <main>
                 <h2>Airlines</h2>
                 {airlines.map((airline) => {
-                    console.log(airline.title)
-                return (
-                <div>
-                    <h4>{airline.title}</h4>
-                    <img key={airline.id} src={airline.logo} 
-                    onClick={()=>{navigate('/reviewslist',{state:{selected: airline.title}},{state:{thumbnail: airline.src}});}} 
-                    />
-                </div>
-                )})}
+                    return (
+                    <ul class="options">
+                        <span key={airline.id} onClick={()=>{navigate('/reviewslist',{state:{selected: airline.name}});}} >
+                            <img src={airline.logo}/>
+                            <p>{airline.name}</p>
+                        </span>
+                    </ul>
+                    )
+                })}
                 
             </main>
             
