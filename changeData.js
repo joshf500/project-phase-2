@@ -18,6 +18,7 @@ function change(data){
                 date,
                 title: faker.lorem.sentence(),
                 text: faker.lorem.lines(randomNum),
+                rating: Math.floor(Math.random() * 6)
             })
         }
 
