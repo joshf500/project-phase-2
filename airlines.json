@@ -49,12 +49,6 @@
       "logo": "https://images.kiwi.com/airlines/64/NOMAGO.png"
     },
     {
-      "id": "WR",
-      "lcc": "1",
-      "name": "WestJet Encore",
-      "logo": "https://images.kiwi.com/airlines/64/WR.png"
-    },
-    {
       "id": "CY",
       "lcc": "0",
       "name": "Cyprus Airways",

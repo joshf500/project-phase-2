@@ -50,24 +50,21 @@ fetch(`http://localhost:6001/reviews`,{
     <div className="new-review-form">
       <h2>New Plant</h2>
       <form onSubmit={handleReviewSubmit} >
-        <datalist id="mylist">
+        <datalist id="airportlist">
             {airports.map((airport) => {
               return (
               <option value={airport.iata_code}>
-               {airport.name} — {airport.city}, {airport.country} 
-                <img src="https://images.kiwi.com/airlines/64/EUROLINES.png"/>
+               {airport.name} — {airport.city}, {airport.country}
               </option>
             )
           })}
-          {/* <option value = {`JFK`} id="JFK" name="KJFK" >New York, USA</option>
-          <option value = {`DOH`} id="DOH" name="OTHH">Doha, Qatar</option> */}
         </datalist>
         <h3>Select Departure</h3>
-        <input type ="search" list ="mylist" id="departure" 
+        <input type ="search" list ="airportlist" id="departure" 
         onChange={e=> {setDepAirport(e.target.value)}}>
         </input>
         <h3>Select Arrival</h3>
-        <input type ="search" list ="mylist" id="arrival"
+        <input type ="search" list ="airportlist" id="arrival"
         onChange={e=> {setArrAirport(e.target.value)}}>
         </input>
     
