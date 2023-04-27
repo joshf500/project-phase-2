@@ -17,7 +17,7 @@ function change(data){
         return airline
     })
 
-    fs.writeFile ("db.json", JSON.stringify(newAirlineData), function(err) {
+    fs.writeFile ("db.json", JSON.stringify({ "airlines": newAirlineData }), function(err) {
         if (err) throw err;
         console.log('complete');
         })
