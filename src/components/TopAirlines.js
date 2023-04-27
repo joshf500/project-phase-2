@@ -1,38 +1,54 @@
 import { useState, useEffect } from "react";
 
 export default function TopAirlines(){
-   
+    const [airlines, setAirlines] = useState([])
+    const [sortedAirlines, setSortedAirlines] = useState([])
 
-const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:6001/airlines`)
+        .then(res => res.json())
+        .then(data => {
+            const airlines = data.map(airline => {
+                if(airline.reviews.length > 0){
+                    calculateRanking(airline)
+                }
 
-useEffect(() => {
-    fetch(`http://localhost:6001/reviews`)
-    .then(res => res.json())
-    .then(data => {
-        setReviews(data)
-    })
-}, []);
-const filteredReviews = reviews.filter((review) => {
-        return reviews.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
-    });
+                return airline
+            }).sort((a, b) => a.averageRating - b.averageRating)
+        })
+
+        const sortedAirlines = airlines.sort((a, b) => b.averageRating - a.averageRating)
+
+        setSortedAirlines(sortedAirlines)
+    }, []);
+
+    const calculateRanking = (airline) => {
+        const sumOfRatings = airline.reviews.map(review => review.rating).reduce((acc, current) => acc + current, 0)
+        const averageRating = sumOfRatings / airline.reviews.length
+
+        fetch(`http://localhost:6001/airlines/${airline.id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({ averageRating })
+        }).then(res => res.json())
+        .then(airlineObj => {
+            return airlineObj
+        })
+        .catch(err => {
+            throw(err)
+        })
+    }
+
     return(
         <>
             <main>
                 <h2>Top Airlines</h2>
-                {filteredReviews.map((review) =>{
-                    return(
-                        <ol key={review.id}>
-                            <li className="card">
-                                <img width={250} src={review?.image} alt={review.title}></img>
-                                <h3>{review?.title}</h3>
-                                <p>Rating: {review?.rating}</p>
-            
-                            </li>
-                        </ol>
-                    )
-                })}
+
             </main>
-            
+
         </>
     )
 }
