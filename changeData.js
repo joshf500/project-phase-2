@@ -22,3 +22,5 @@ function change(data){
         console.log('complete');
         })
 }
+
+change(airlines)
