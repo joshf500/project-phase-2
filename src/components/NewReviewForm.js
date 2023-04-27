@@ -46,7 +46,7 @@ fetch(`http://localhost:6001/reviews`,{
   return (
     
     <div className="new-review-form">
-      <h2>New Plant</h2>
+      <h2>Review Your {`${location.state.selected}`} Flight</h2>
       <form onSubmit={handleReviewSubmit} >
         <datalist id="airportlist">
             {airports.map((airport) => {

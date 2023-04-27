@@ -1,7 +1,7 @@
 :root {
   --green: rgb(39, 189, 39);
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,8 @@
 }
 
 body {
-  font-family: "Playfair Display", serif;
+  font-family: 'Montserrat', sans-serif;
+  /* font-weight: 1600; */
 }
 
 h2 {
@@ -105,6 +106,7 @@ input:focus {
   margin: 1rem; */
 }
 
-.options {
-  align-items: center;
+.options img{
+  display: flex;
+  justify-content: center;
 }

@@ -54,6 +54,14 @@
       "text": "I love sweden",
       "title": "Scandinavian Airlines",
       "id": 11
+    },
+    {
+      "depAirport": "EWR (Newark)",
+      "arrAirport": "ARN (Stockholm)",
+      "date": "2023-04-25",
+      "text": "I love Newark",
+      "title": "Scandinavian Airlines",
+      "id": 12
     }
   ]
 }
