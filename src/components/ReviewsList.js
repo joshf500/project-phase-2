@@ -8,22 +8,21 @@ import { useLocation } from "react-router-dom";
 function ReviewsList() {
   const [reviews, setReviews] = useState([]);
   const location = useLocation()
-   
+
   useEffect(() => {
-    if (location?.state?.selected){
-      fetch(`http://localhost:6001/reviews?title=${location.state.selected}`)
+    if (location?.state?.airline){
+      fetch(`http://localhost:6001/airlines/${location.state.airline.id}`)
         .then(res => res.json())
-        .then(data => setReviews(data))
-      } else{
-        fetch(`http://localhost:6001/reviews`)
-        .then(res => res.json())
-        .then(data => setReviews(data))
+        .then(data => setReviews(data.reviews))
+        .catch(err => {
+            throw(err)
+          })
       }
     }, []);
 
   return (
     <ul className="reviewsList">
-      <h2>{location.state.selected} Flight Reviews</h2>
+      <h2>{location.state.airline.name} Flight Reviews</h2>
       {reviews.map((review) => {
         // console.log(plant);
         return (
