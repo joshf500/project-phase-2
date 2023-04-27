@@ -6,7 +6,7 @@ import Home from "./Home";
 import TopAirlines from "./TopAirlines";
 import NewReviewForm from "./NewReviewForm"; 
 import ReviewsList from "./ReviewsList";
-import CreateReview from "./CreateReview";
+import CreateByAirline from "./CreateByAirline";
 const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
 const gpsCode = "OTHH"
 
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path='/' exact="true" element={<Home />} />
         <Route path='view' element={<ViewByAirline/>} />
-        <Route path='create' element={<CreateReview/>} />
+        <Route path='create' element={<CreateByAirline/>} />
         <Route path='newreviewform' element={<NewReviewForm/>} />
         <Route path='reviewslist' element={<ReviewsList/>} />
         <Route path='topairlines' element={<TopAirlines />} /> 

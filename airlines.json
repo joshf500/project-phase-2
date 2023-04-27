@@ -583,12 +583,6 @@
       "logo": "https://images.kiwi.com/airlines/64/LT.png"
     },
     {
-      "id": "XM",
-      "lcc": "0",
-      "name": "Alitalia Express",
-      "logo": "https://images.kiwi.com/airlines/64/XM.png"
-    },
-    {
       "id": "4D",
       "lcc": "0",
       "name": "Air Sinai",
@@ -1013,12 +1007,6 @@
       "lcc": "0",
       "name": "Sylt Air",
       "logo": "https://images.kiwi.com/airlines/64/7E.png"
-    },
-    {
-      "id": "CT",
-      "lcc": "0",
-      "name": "Alitalia Cityliner",
-      "logo": "https://images.kiwi.com/airlines/64/CT.png"
     },
     {
       "id": "OF",
@@ -5077,12 +5065,6 @@
       "logo": "https://images.kiwi.com/airlines/64/HP.png"
     },
     {
-      "id": "F7",
-      "lcc": "0",
-      "name": "Etihad Regional",
-      "logo": "https://images.kiwi.com/airlines/64/F7.png"
-    },
-    {
       "id": "6H",
       "lcc": "0",
       "name": "Israir",
@@ -6369,7 +6351,7 @@
     {
       "id": "AZ",
       "lcc": "0",
-      "name": "Alitalia",
+      "name": "ITA Airways",
       "logo": "https://images.kiwi.com/airlines/64/AZ.png"
     },
     {

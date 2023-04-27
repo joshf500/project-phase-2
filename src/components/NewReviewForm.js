@@ -1,7 +1,5 @@
 import React, {useEffect, useState, useContext} from "react";
 import { useLocation } from "react-router-dom";
-import CreateReview, { MyContext } from "./CreateReview"
-const apiKey="67a39b6d0acb87e2c654ffb8e3194f5828d48b6fc98874795140feabfbfb9f196b5fd846066cb69fefc812cba8a23879"
 
 function NewReviewForm({onReviewSubmit}) {
   const location = useLocation()
@@ -53,7 +51,7 @@ fetch(`http://localhost:6001/reviews`,{
         <datalist id="airportlist">
             {airports.map((airport) => {
               return (
-              <option value={airport.iata_code}>
+              <option value = {`${airport.iata_code} (${airport.city})`} >
                {airport.name} — {airport.city}, {airport.country}
               </option>
             )

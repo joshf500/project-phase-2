@@ -38,6 +38,22 @@
       "title": "Scandinavian Airlines",
       "rating": "2",
       "id": 9
+    },
+    {
+      "depAirport": "KRT",
+      "arrAirport": "DXB",
+      "date": "2023-04-25",
+      "text": "Hello",
+      "title": "Sundair",
+      "id": 10
+    },
+    {
+      "depAirport": "ARN",
+      "arrAirport": "EWR",
+      "date": "2023-04-10",
+      "text": "I love sweden",
+      "title": "Scandinavian Airlines",
+      "id": 11
     }
   ]
 }

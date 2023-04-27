@@ -104,3 +104,7 @@ input:focus {
   padding-left: 0.5rem;
   margin: 1rem; */
 }
+
+.options {
+  align-items: center;
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {useNavigate} from 'react-router-dom'
 
-function ViewAirlineList({airlines}){
+function CreateAirlineList({airlines}){
 // const [airlines, setAirlines] = useState([])
 const navigate = useNavigate()
 console.log(airlines[0])
@@ -19,7 +19,7 @@ return (
         {airlines.map((airline) => {
             console.log(airline.logo);
         return(
-        <span class="options" key={airline.id} onClick={()=>{navigate('/reviewslist',{state:{selected: airline.name}});}} >
+        <span class="options" key={airline.id} onClick={()=>{navigate('/newreviewform',{state:{selected: airline.name}});}} >
             <img src={airline.logo}/>
             <p>{airline.name}</p>
         </span>   
@@ -28,4 +28,4 @@ return (
     </ul>
 )
 }
-export default ViewAirlineList
+export default CreateAirlineList
