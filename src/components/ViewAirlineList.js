@@ -13,16 +13,16 @@ console.log(airlines[0])
 //        })
 //   }, []);
 
-  
+
 return (
     <ul>
         {airlines.map((airline) => {
             console.log(airline.logo);
         return(
-        <span class="options" key={airline.id} onClick={()=>{navigate('/reviewslist',{state:{selected: airline.name}});}} >
+        <span class="options" key={airline.id} onClick={()=>{navigate('/reviewslist',{state:{ airline }});}} >
             <img src={airline.logo}/>
             <p>{airline.name}</p>
-        </span>   
+        </span>
         )
         })}
     </ul>
