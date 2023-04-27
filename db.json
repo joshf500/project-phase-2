@@ -4,7 +4,24 @@
       "lcc": "None",
       "name": "Autostradale",
       "logo": "https://images.kiwi.com/airlines/64/AUTOSTRAD.png",
-      "reviews": [],
+      "reviews": [
+        {
+          "depAirport": "DOH",
+          "arrAirport": "JFK",
+          "date": "2023-04-12",
+          "text": "gchjgv",
+          "rating": 4,
+          "id": 7
+        },
+        {
+          "depAirport": "JFK",
+          "arrAirport": "DOH",
+          "date": "2023-04-11",
+          "text": "5 stars",
+          "rating": 5,
+          "id": 8
+        }
+      ],
       "appId": "AUTOSTRAD",
       "id": 1
     },
