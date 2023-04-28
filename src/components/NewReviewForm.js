@@ -56,7 +56,7 @@ function handleReviewSubmit(e){
 
     <div className="new-review-form">
       <h2>Review Your {`${airline.name}`} Flight</h2>
-      <StarRating/>
+      
       <form onSubmit={handleReviewSubmit} >
         <datalist id="airportlist">
             {airports.map((airport) => {
@@ -77,12 +77,13 @@ function handleReviewSubmit(e){
         </input>
 
         <input type="date" id="date"  placeholder="Date" onChange={e=>setDate(e.target.value)} />
-
+        
         <select onChange={e=>setRating(e.target.value)}>
           Rate your experience out of 5
             <option key="1" value="1" >1</option><option key="2" value="2" >2</option>
             <option key="3" value="3" >3</option><option key="4" value="4" >4</option>
             <option key="5" value="5" >5</option>
+        
         </select>
           <textarea id="review" rows="4" cols="50" placeholder="Share your experience!" onChange={e=>setText(e.target.value)}>
         </textarea>

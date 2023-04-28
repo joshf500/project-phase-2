@@ -28,7 +28,6 @@ function ReviewsList() {
         />
       <ul className="reviewsList">
         {reviews.map((review) => {
-          // console.log(plant);
           return (
 
             <ReviewCard key={review?.id}
