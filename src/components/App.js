@@ -3,7 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom'
 import ViewByAirline from "./ViewByAirline";
 import "./App.css";
 import Home from "./Home";
-import TopAirlines from "./TopAirlines";
+import TopAirlines from "./TopAirlines/TopAirlines";
 import NewReviewForm from "./NewReviewForm";
 import ReviewsList from "./ReviewsList";
 import CreateByAirline from "./CreateByAirline";

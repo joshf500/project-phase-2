@@ -52,7 +52,8 @@ h1 {
     margin-top: 2rem;
     height: 20rem;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    /* justify-content: flex-start; */
     gap: 1rem;
     border-radius: 8px;
     box-shadow: 0px 0px 8px #ccc;
@@ -60,7 +61,12 @@ h1 {
     background-color: var(--shadegreen);
 }
 
-.top-airline-card img {
+.top-airline-card div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.top-airline-card div img {
     height: 8rem;
     width: 8rem;
     border-radius: 8px;
@@ -68,26 +74,30 @@ h1 {
     background-color: white;
 }
 
-.top-airline-card div{
+.top-airline-card div div {
     padding: 1rem;
     justify-content: center;
     width: 100%;
 }
 
-.top-airline-card h3 {
+.top-airline-card div h3 {
     color: white;
     font-size: 1.5em;
     opacity: 2;
     justify-self: left;
 }
 
-.top-airline-card h6 {
+.top-airline-card div h6 {
     color: white;
     opacity: 2;
     font-size: 1em;
     justify-content: center;
 }
 
-.top-airline-card h6 span {
+.top-airline-card div h6 span {
     font-size: 1.5em;
+}
+
+.rating_star {
+    color: yellow;
 }
