@@ -1,38 +1,34 @@
 import { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 
 export default function TopAirlines(){
-   
+    const navigate = useNavigate()
+    const [airlines, setAirlines] = useState([])
 
-const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:6001/airlines`)
+        .then(res => res.json())
+        .then(data => {
+            const airlines = data.sort((a, b) => b.averageRating - a.averageRating)
+            setAirlines(airlines)
+        })
+    }, []);
 
-useEffect(() => {
-    fetch(`http://localhost:6001/reviews`)
-    .then(res => res.json())
-    .then(data => {
-        setReviews(data)
-    })
-}, []);
-const filteredReviews = reviews.filter((review) => {
-        return reviews.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
-    });
     return(
         <>
             <main>
                 <h2>Top Airlines</h2>
-                {filteredReviews.map((review) =>{
-                    return(
-                        <ol key={review.id}>
-                            <li className="card">
-                                <img width={250} src={review?.image} alt={review.title}></img>
-                                <h3>{review?.title}</h3>
-                                <p>Rating: {review?.rating}</p>
-            
-                            </li>
-                        </ol>
-                    )
-                })}
+                <ul>
+                    {airlines.map(airline => {
+                        return (<li key={airline.id} onClick={()=>{navigate('/reviewslist',{state:{ airline }});}}>
+                            <h5>{airline.name}</h5>
+                            <h6>Average Rating:{airline.averageRating}</h6>
+                        </li>)
+                    })}
+                </ul>
+
             </main>
-            
+
         </>
     )
 }

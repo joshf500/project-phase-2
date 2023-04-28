@@ -18,10 +18,18 @@ function change(data){
                 date,
                 title: faker.lorem.sentence(),
                 text: faker.lorem.lines(randomNum),
+                rating: Math.floor(Math.random() * 6)
             })
         }
 
         airline.reviews = reviews
+
+        if(airline.reviews.length > 0){
+            const sumOfRatings = airline.reviews.map(review => review.rating).reduce((acc, current) => acc + current, 0)
+            const averageRating = parseFloat(sumOfRatings / airline.reviews.length).toFixed(1)
+
+            airline.averageRating = parseFloat(averageRating)
+        }
 
         let appId = airline.id
         airline.appId = appId
