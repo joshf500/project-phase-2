@@ -1,5 +1,7 @@
 :root {
   --green: rgb(39, 189, 39);
+  --lightgreen: rgba(181, 250, 181, 0.5);
+  --shadegreen: rgba(39, 189, 39, 0.75)
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
@@ -8,13 +10,27 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: 'Montserrat', sans-serif;
-  /* font-weight: 1600; */
+  background-color: var(--lightgreen);
 }
 
 h2 {
   margin-bottom: 1rem;
+  text-align: center;
+  color: var(--green);
+  font-size: 2.5em;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--green);
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
 }
 
 button {
@@ -32,7 +48,7 @@ button.primary {
 .app {
   font-family: inherit;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 75em;
 }
 
 header h1 {
@@ -42,15 +58,26 @@ header h1 {
   padding: 0.5rem 0;
 }
 
+header {
+  margin: 0;
+}
+
 /* .logo {
   font-size: 1.25em;
   padding-left: 0.5rem;
   color: transparent;
   text-shadow: 0 0 0 var(--green);
 } */
+/*
+} */
 
 main {
-  padding: 0 1rem;
+  background-color: white;
+  margin: 10rem;
+  margin-top: 4rem;
+  border:1px solid transparent;
+  padding: 5rem;
+  height: 100%;
 }
 
 .new-plant-form {
@@ -66,8 +93,8 @@ main {
 
 .NewReviewForm #date {
   margin-right: 2rem;
-  
-  width: 10px;
+
+  width: 0.5rem;
 }
 
 .searchbar {
